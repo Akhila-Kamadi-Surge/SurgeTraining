@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.text.*;
 /*
  * A person is opening an account on 16th August 2022 at 4pm. 
- * Account number can be IFCS(static variable) + 081620221600 + 001
+ * Account number can be IFSC(static variable) + 081620221600 + 001
  * Suppose IFSC is SBH123 then account number will be SBH123081620221600001
  * Make a counter and increase it for each customer.
  */
