@@ -110,6 +110,10 @@ public class Inheritance
 		int div = dvObj.division(300, 2, 3);
 		System.out.println("Calling division() method of Division class "+div);
 		
+		//=====================
+		ArrayAddition arrSum = new ArrayAddition();
+		System.out.println("Sum of Array elements "+arrSum.sumArr(new int[] {1,2,3,4,5}));
+		
 	}
 
 }
