@@ -20,7 +20,7 @@ class MugCake implements Cake{
 	@Override
 	public void Baking() {
 		// TODO Auto-generated method stub
-		System.out.println("Poring the batter into jar and Baking the mixed batter");
+		System.out.println("Pouring the batter into jar and Baking the mixed batter");
 	}
 
 	@Override
