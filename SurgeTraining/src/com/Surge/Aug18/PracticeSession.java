@@ -1,0 +1,41 @@
+package com.Surge.Aug18;
+
+class ArrayLength{
+	int arrLength(int[] arr) {
+		int length = arr.length;
+		return length;
+	}
+	int maxArrElem(int[] arr) {
+		int length = arrLength(arr);
+		int max = Integer.MIN_VALUE;
+		for(int i = 0; i < length; i++) {
+			if(arr[i]>max) {
+				max = arr[i];
+			}
+		}
+		return max;
+	}
+	int minArrElem(int[] arr) {
+		int length = arrLength(arr);
+		int min = Integer.MAX_VALUE;
+		for(int i = 0; i < length; i++) {
+			if(arr[i]<min) {
+				min = arr[i];
+			}
+		}
+		return min;
+	}
+	void print(int[] arr) {
+		System.out.println("Length of the array is "+arrLength(arr));
+		System.out.println("Max element in the array is "+maxArrElem(arr));
+		System.out.println("Max element in the array is "+minArrElem(arr));
+	}
+}
+
+public class PracticeSession {
+	public static void main(String[] args) {
+		ArrayLength arrLen = new ArrayLength();
+		int[] arr = {1,2,3,4,5};
+		arrLen.print(arr);
+	}
+}
