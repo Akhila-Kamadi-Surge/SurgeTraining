@@ -21,7 +21,7 @@ public class Palindorme {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a string");
 		String str = sc.next();
-		
+		sc.close();
 		if(palindrome(str)) {
 			System.out.println("Given string is a palidrome");
 		}
