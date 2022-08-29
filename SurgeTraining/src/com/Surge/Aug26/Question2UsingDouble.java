@@ -76,6 +76,7 @@ class ModuliClass extends DoubleOperations{
 }
 public class Question2UsingDouble {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DoubleOperations doubleObj = new ModuliClass();
