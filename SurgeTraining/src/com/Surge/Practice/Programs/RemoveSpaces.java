@@ -6,27 +6,27 @@ package com.Surge.Practice.Programs;
  */
 
 public class RemoveSpaces {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String str = "Akhila     Kamadi";
+	//---------------With replace()--------------------
+	static String removeSpaceWithReplace(String str) {
 		int len = str.length();
-		
-		//---------------With replace()--------------------
 		String newStr = str.replace(" ", "");
-		System.out.println("with Replace output : "+newStr);
-		
-		//----------------Without replace()-------------------
-//		Method1 : using new string
+		return newStr;
+	}
+	//----------------Without replace()-------------------
+//	Method1 : using new string
+	static String removeSpacesMethod1(String str) {
+		int len = str.length();
 		String noSpace = "";
 		for (int i = 0; i < len; i++) {
 			if(str.charAt(i)!=' ') {
 				noSpace += str.charAt(i);
 			}
 		}
-		System.out.println("Method1 : Using new string output : "+noSpace);
-		//------------
-//		Method2 : Using character array
+		return noSpace;
+	}
+//	Method2 : Using character array
+	static String removeSpacesMethod2(String str) {
+		int len = str.length();
 		char[] arr = str.toCharArray();
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < len; i++) {
@@ -34,7 +34,16 @@ public class RemoveSpaces {
 				sb.append(arr[i]);
 			}
 		}
-		System.out.println("Method2 : Using Char array and String Builder output : "+sb.toString());
+		return sb.toString();
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "Akhila     Kamadi";
+		
+		System.out.println("Method2 : Using new string output : "+removeSpaceWithReplace(str));
+		System.out.println("Method2 : Using new string output : "+removeSpacesMethod1(str));
+		System.out.println("Method2 : Using Char array and String Builder output : "+removeSpacesMethod2(str));
 	}
 
 }

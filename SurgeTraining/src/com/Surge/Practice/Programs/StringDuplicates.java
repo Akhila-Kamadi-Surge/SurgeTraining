@@ -3,11 +3,8 @@ package com.Surge.Practice.Programs;
 //Write a Java Program to find the duplicate characters in a string
 
 public class StringDuplicates {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String str = "AkhilaaKamadi";
-        str = str.toLowerCase();
+	static String duplicates(String str) {
+		str = str.toLowerCase();
         int len = str.length();
         String res = "";
         for(int i = 0; i < len; i++) {
@@ -23,7 +20,14 @@ public class StringDuplicates {
                 res+=str.charAt(i)+" ";
             }
         }
-        System.out.println(res);
+        return res;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "AkhilaaKamadi";
+        
+        System.out.println(duplicates(str));
 	}
 
 }

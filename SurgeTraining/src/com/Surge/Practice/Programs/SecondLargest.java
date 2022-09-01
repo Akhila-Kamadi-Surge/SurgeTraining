@@ -5,18 +5,15 @@ package com.Surge.Practice.Programs;
 import java.util.Arrays;
 
 public class SecondLargest {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int[] arr = {3,45,78,-1,2,90,-54,65,30};
+	//Method1 : Using inbuilt sort
+	static int secondLargeMethod1(int[] arr) {
 		int len = arr.length;
-		
-		//Method1 : Using inbuilt sort
 		Arrays.sort(arr);
-		System.out.println("Second largest element in an array : "+arr[len-2]);
-		
-		//========================================
-		//Method2 : Finding 1st largest, swap and find second large
+		return arr[len-2];
+	}
+	//Method2 : Finding 1st largest, swap and find second large
+	static int secondLargeMethod2(int[] arr) {
+		int len = arr.length;
 		int max1 = Integer.MIN_VALUE, max2 = Integer.MIN_VALUE;
 		int maxIndex = -1;
 		//Find 1st largest
@@ -34,10 +31,11 @@ public class SecondLargest {
 		for(int i = 0; i < len-1; i++) {
 			max2 = Math.max(max2, arr[i]);
 		}
-		System.out.println("Second largest element in an array : "+max2);
-		
-		//=======================================================
-		//Method3 : Using if else conditions
+		return max2;
+	}
+	//Method3 : Using if else conditions
+	static int secondLargeMethod3(int[] arr) {
+		int len = arr.length;
 		int maxVal1 = Integer.MIN_VALUE, maxVal2 = Integer.MIN_VALUE;
 		for(int i = 0; i < len; i++) {
 			if(arr[i]>maxVal1) {
@@ -48,9 +46,11 @@ public class SecondLargest {
 				maxVal2 = arr[i];
 			}
 		}
-		System.out.println("Second largest element in an array : "+maxVal2);
-		
-		//Method4: 
+		return maxVal2;
+	}
+	//Method4:
+	static int secondLargeMethod4(int[] arr) {
+		int len = arr.length;
 		int first = Integer.MIN_VALUE, second = Integer.MIN_VALUE;
 		//Find 1st largest
 		for(int i = 0; i < len; i++) {
@@ -62,7 +62,28 @@ public class SecondLargest {
 				second = Math.max(second, arr[i]);
 			}
 		}
-		System.out.println("Second largest element in an array : "+second);
+		return second;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = {3,45,78,-1,2,90,-54,65,30};
+		
+		//Method1 : Using inbuilt sort
+		System.out.println("Second largest element in an array using in-built sort: "+secondLargeMethod1(arr));
+		
+		//========================================
+		//Method2 : Finding 1st largest, swap and find second large
+		System.out.println("Second largest element in an array : "+secondLargeMethod2(arr));
+		
+		//=======================================================
+		//Method3 : Using if else conditions
+		
+		System.out.println("Second largest element in an array : "+secondLargeMethod3(arr));
+		
+		//======================================
+		//Method4: 
+		System.out.println("Second largest element in an array : "+secondLargeMethod4(arr));
 	}
 
 }
