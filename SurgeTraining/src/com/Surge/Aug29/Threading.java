@@ -25,13 +25,18 @@ public class Threading {
 		
 		System.out.println(Thread.currentThread().getName());
 		Thread.sleep(1000);//1 sec
-		//Anonymous thread
-		new Runnable() {
+		//Anonymous thread using Runnable interface
+		Runnable t1 = new Runnable() {
 			public void run() {
-				System.out.println(Thread.currentThread().getName());
+				String threadName = "Thread-r";
+				Thread.currentThread().setName(threadName);
+				System.out.println("Anonymous thread using Runnable interface "+ Thread.currentThread().getName());
 			}
 		};
+		Thread t = new Thread(t1);
+		t.start();
 		
+		//Independent Thread
 		ThreadingDemo obj = new ThreadingDemo();
 		obj.start();
 		Thread.sleep(1000);
