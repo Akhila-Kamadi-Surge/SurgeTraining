@@ -5,32 +5,34 @@ package com.Surge.Practice.Programs;
 import java.util.Arrays;
 
 public class ArrayEqualOrNot {
-
+	static boolean equalArrays(int[] A, int[] B) {
+		int lenA = A.length, lenB = B.length;
+		if(lenA!=lenB) {
+			return false;
+		}
+		int i = 0;
+		while(i<lenA) {
+			if(A[i]==B[i]) {
+				i++;
+			}
+			else {
+				return false;
+			}
+		}
+		return true;	
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] A = {12,54,27,3,90};
 //		int[] B = {3,4,5,6,7};
 		int[] B = {12,54,27,3,90};
 		System.out.println(Arrays.equals(A,B));
-		
-		int lenA = A.length, lenB = B.length;
-		if(lenA!=lenB) {
-			System.out.println("Arrays are not equal");
+		//Method 2
+		if(equalArrays(A, B)) {
+			System.out.println("Arrays are equal");
 		}
 		else {
-			int i = 0;
-			while(i<lenA) {
-				if(A[i]==B[i]) {
-					i++;
-				}
-				else {
-					System.out.println("Arrays are not equal");
-					break;
-				}
-			}
-			if(i==lenA) {
-				System.out.println("Arrays are equal");
-			}
+			System.out.println("Arrays are not equal");
 		}
 	}
 
