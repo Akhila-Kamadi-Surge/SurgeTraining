@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 public class LargestLengthString {
 	static HashSet<String> largeString(ArrayList<String> arrList) {
-		int n= arrList.size();
+		int n = arrList.size();
 		int len = 0;
 		for(int i = 0; i <n; i++){
 			if(len < arrList.get(i).length()) {
