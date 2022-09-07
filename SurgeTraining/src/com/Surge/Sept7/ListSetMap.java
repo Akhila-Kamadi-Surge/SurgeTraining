@@ -45,6 +45,7 @@ public class ListSetMap {
 	    map.put(null, "AK");
 	    map.put(null, null);
 	    map.put(3, null);
+	    map.put(5, null);
 	    System.out.println(map);
 	    
 	    for(Entry<Integer, String> entry : map.entrySet()) {
