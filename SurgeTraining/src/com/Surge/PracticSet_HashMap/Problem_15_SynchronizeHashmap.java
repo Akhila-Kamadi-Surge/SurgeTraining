@@ -11,4 +11,5 @@ public class Problem_15_SynchronizeHashmap {
 	
 	//Getting synchronized Map
 	Map<String, Integer> syncMap = Collections.synchronizedMap(map);
+
 }
