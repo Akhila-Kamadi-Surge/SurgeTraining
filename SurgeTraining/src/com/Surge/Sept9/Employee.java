@@ -2,7 +2,7 @@ package com.Surge.Sept9;
 
 import java.util.HashMap;
 
-class EmployeeData{
+class EmployeeData1{
 	private int employeeId;
 	private String employeeName;
 	
@@ -30,7 +30,7 @@ public class Employee {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		EmployeeData emp1 = new EmployeeData();
+		EmployeeData1 emp1 = new EmployeeData1();
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		
 		emp1.setEmployeeId(1);
