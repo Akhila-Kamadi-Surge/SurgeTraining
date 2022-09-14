@@ -60,7 +60,7 @@ public class UniqueEmployees {
                 map.put(list.get(i).getEmployeeName(),list.get(i).getEmployeeId());
             }
             else {
-//                int val = map.get(list.get(i).getEmployeeName());
+                int val = map.get(list.get(i).getEmployeeName());
                 map.remove(list.get(i).getEmployeeName());
             }
         }

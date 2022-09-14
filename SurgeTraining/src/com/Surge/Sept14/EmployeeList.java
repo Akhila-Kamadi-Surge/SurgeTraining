@@ -52,7 +52,7 @@ class EmployeeList{
 		HashMap<Integer,String> ans = new HashMap<Integer, String>();
 		for(int i = 0; i < list1.size(); i++) {
 			for(int j = 0; j < list2.size(); j++) {
-				if(list1.get(i).getEmployeeName() == list2.get(j).getEmployeeName()) {
+				if(list1.get(i).getEmployeeName().equals( list2.get(j).getEmployeeName())) {
 					ans.put(list1.get(i).getEmployeeId(), list1.get(i).getEmployeeName());
 					break;
 				}
