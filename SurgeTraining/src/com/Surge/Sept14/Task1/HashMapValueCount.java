@@ -22,8 +22,8 @@ public class HashMapValueCount {
 			String val = entry.getValue();
 			
 			if(map2.containsKey(val)) {
-				int Key = map2.get(val);
-				map2.put(val, Key+1);
+				int freq = map2.get(val);
+				map2.put(val, freq+1);
 			}
 			else {
 				map2.put(val, 1);
