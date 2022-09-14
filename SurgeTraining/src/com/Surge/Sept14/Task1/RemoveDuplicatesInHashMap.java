@@ -15,20 +15,25 @@ public class RemoveDuplicatesInHashMap {
 		map.put(6, "Google");
 		map.put(7, "Google");
 		
-		HashMap<String, Integer> ansMap = new HashMap<>();
-//		for(int i = 0; i < map.size(); i++) {
-//			String company = map.get(i+1);
+		HashMap<Integer,String> ans = new HashMap<>();
+		for(int i = 1; i <= map.size(); i++) {
+			if(!ans.containsValue(map.get(i))) {
+				ans.put(i, map.get(i));
+			}
+		}
+		System.out.println(ans);
+		
+//		============================
+//		Using reverse Hashmap
+		
+//		HashMap<String, Integer> ansMap = new HashMap<>();
+//		for(int i = 1; i <= map.size(); i++) {
+//			String company = map.get(i);
 //			if(!ansMap.containsKey(company)) {
-//				ansMap.put(company, i+1);
-//			}
-//			else {
-//				ansMap.remove(company);
+//				ansMap.put(company, i);
 //			}
 //		}
-		
-		
-		
-		System.out.println(ansMap);
+//		System.out.println(ansMap);
 	}
 
 }
