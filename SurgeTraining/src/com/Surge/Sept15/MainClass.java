@@ -93,7 +93,8 @@ public class MainClass {
         Student s2 = new Student();
         s2.setSem(semMap2);
         studentMap.put("AkhilaK",s2);
-
+        
+        //iterating over each semester marks of each student
         for (Entry<String,Student> entry : studentMap.entrySet()){
             System.out.println("--------------Student Name :"+entry.getKey()+"---------------");
             for (Entry<String,Semester> entry1 : entry.getValue().getSem().entrySet()){
