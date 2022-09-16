@@ -1,7 +1,7 @@
 package com.Surge.Sept16.Task2;
 
-import java.util.HashMap;
-import java.util.Map.Entry;
+import java.util.ArrayList;
+import java.util.List;
 
 class Employee {
 	private String id, name,email;
@@ -79,12 +79,12 @@ class Employee {
 //		Documents docs;
 		
 		class Documents{
-			private HashMap<String,String> listOfDocuments;
+			private List<String> listOfDocuments;
 			
-			public HashMap<String,String> getListOfDocuments(){
+			public List<String> getListOfDocuments(){
 				return this.listOfDocuments;
 			}
-			public void setListOfDocuments(HashMap<String,String> listOfDocuments) {
+			public void setListOfDocuments(List<String> listOfDocuments) {
 				this.listOfDocuments = listOfDocuments;
 			}
 		}
@@ -107,10 +107,10 @@ class Main{
 		ad.setPinode(500780);
 		
 		Employee.Address.Documents docs = ad.new Documents();
-		HashMap<String,String> listOfDocuments = new HashMap<String,String>();
-		listOfDocuments.put("Aadhar Number", "1234 5678 9101");
-		listOfDocuments.put("Pan Card Number", "HYFKP7654L");
-		listOfDocuments.put("Image", "Photo.jpg");
+		List<String> listOfDocuments = new ArrayList<String>();
+		listOfDocuments.add("Aadhar No : 1234 5678 9101");
+		listOfDocuments.add("Pan No : HYFKP7654L");
+		listOfDocuments.add("Image : Photo.jpg");
 		docs.setListOfDocuments(listOfDocuments);
 		
 		System.out.println("Name : "+emp.getName());
@@ -124,9 +124,7 @@ class Main{
 		System.out.println("State : "+ad.getState());
 		System.out.println("Pincode : "+ad.getPinode());
 		
-		for(Entry<String, String> entry : listOfDocuments.entrySet()) {
-			System.out.println(entry.getKey()+" : "+entry.getValue());
-		}
+		System.out.println(listOfDocuments);
 		
 	}
 }
