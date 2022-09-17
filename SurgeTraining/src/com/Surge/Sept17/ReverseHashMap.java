@@ -22,9 +22,6 @@ public class ReverseHashMap {
 		return revMap;
 	}
 	public static void main(String[] args) {
-		Employee emp = new Employee();
-//		System.out.println(setHashMap(emp));
-//		System.out.println(reverseHashMap(setHashMap(emp), emp));
 		HashMap<Double,Integer> revMap = reverseHashMap(setHashMap());
 		for(Entry<Double,Integer> entry : revMap.entrySet() ) {
 			System.out.println("Salary : "+entry.getKey()+", Employee ID : "+entry.getValue());
