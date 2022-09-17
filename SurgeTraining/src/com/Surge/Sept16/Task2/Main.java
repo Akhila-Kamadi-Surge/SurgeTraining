@@ -39,92 +39,143 @@ class Employee {
 		this.phone = phone;
 	}
 	
-//	Address address;
+	private Address address;
 	
-	class Address{
-		private String houseNo, street, city, state;
-		private int pinode;
-		
-		public String getHouseNo() {
-			return this.houseNo;
-		}
-		public void setHouseNo(String houseNo) {
-			this.houseNo = houseNo;
-		}
-		public String getStreet() {
-			return street;
-		}
-		public void setStreet(String street) {
-			this.street = street;
-		}
-		public String getCity() {
-			return city;
-		}
-		public void setCity(String city) {
-			this.city = city;
-		}
-		public String getState() {
-			return state;
-		}
-		public void setState(String state) {
-			this.state = state;
-		}
-		public int getPinode() {
-			return pinode;
-		}
-		public void setPinode(int pinode) {
-			this.pinode = pinode;
-		}
-		
-//		Documents docs;
-		
-		class Documents{
-			private List<String> listOfDocuments;
-			
-			public List<String> getListOfDocuments(){
-				return this.listOfDocuments;
-			}
-			public void setListOfDocuments(List<String> listOfDocuments) {
-				this.listOfDocuments = listOfDocuments;
-			}
-		}
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+}
+class Address{
+	private String houseNo, street, city, state;
+	private int pincode;
+	
+	public String getHouseNo() {
+		return this.houseNo;
+	}
+	public void setHouseNo(String houseNo) {
+		this.houseNo = houseNo;
+	}
+	public String getStreet() {
+		return street;
+	}
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public int getPincode() {
+		return pincode;
+	}
+	public void setPincode(int pincode) {
+		this.pincode = pincode;
+	}
+	
+	private List<Documents> listOfDocs;
+
+	public List<Documents> getListOfDocs() {
+		return listOfDocs;
+	}
+	public void setListOfDocs(List<Documents> listOfDocs) {
+		this.listOfDocs = listOfDocs;
+	}
+	
+}
+class Documents{
+	private String documentName, documentID;
+
+	public String getDocumentName() {
+		return documentName;
+	}
+
+	public void setDocumentName(String documentName) {
+		this.documentName = documentName;
+	}
+
+	public String getDocumentID() {
+		return documentID;
+	}
+
+	public void setDocumentID(String documentID) {
+		this.documentID = documentID;
 	}
 }
 class Main{
-	public static <Documents> void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+	static Employee parentMethod() {
 		Employee emp = new Employee();
 		emp.setId("STS179");
 		emp.setEmail("STS179@surgetechinc.in");
 		emp.setName("Akhila Kamadi");
 		emp.setPhone(9876543210l);
 		
-		Employee.Address ad = emp.new Address();
+		Address ad = new Address();
 		ad.setHouseNo("7-90/65");
-		ad.setStreet("Miyapur");
+		ad.setStreet(" 5, Miyapur");
 		ad.setCity("Hyderabad");
 		ad.setState("Telangana");
-		ad.setPinode(500780);
+		ad.setPincode(500780);
 		
-		Employee.Address.Documents docs = ad.new Documents();
-		List<String> listOfDocuments = new ArrayList<String>();
-		listOfDocuments.add("Aadhar No : 1234 5678 9101");
-		listOfDocuments.add("Pan No : HYFKP7654L");
-		listOfDocuments.add("Image : Photo.jpg");
-		docs.setListOfDocuments(listOfDocuments);
+		emp.setAddress(ad);
 		
-		System.out.println("Name : "+emp.getName());
-		System.out.println("Employee ID : "+emp.getId());
-		System.out.println("Phone Number : "+emp.getPhone());
-		System.out.println("Email ID : "+emp.getEmail());
+		List<Documents> listOfDocuments = new ArrayList<Documents>();
 		
+		Documents docs1 = new Documents();
+		docs1.setDocumentName("Aadhar No");
+		docs1.setDocumentID("1234 5678 9101");
+		listOfDocuments.add(docs1);
+		
+		Documents docs2 = new Documents();
+		docs2.setDocumentName("Pan No");
+		docs2.setDocumentID("HYFKP7654L");
+		listOfDocuments.add(docs2);
+		
+		Documents docs3 = new Documents();
+		docs3.setDocumentName("Passport");
+		docs3.setDocumentID("XYZ12355Y");
+		listOfDocuments.add(docs3);
+		
+		ad.setListOfDocs(listOfDocuments);
+		
+		return emp;
+	}
+	
+	public static void main(String[] args) {
+
+		System.out.println("Employee Details : ");
+		System.out.println("Employee ID : "+parentMethod().getId());
+		System.out.println("Name : "+parentMethod().getName());
+		System.out.println("Email : "+parentMethod().getEmail());
+		System.out.println("Phone Number : "+parentMethod().getPhone());
+		
+		Address ad = parentMethod().getAddress();
+		System.out.println("Address:");
 		System.out.println("House No : "+ad.getHouseNo());
 		System.out.println("Street Name : "+ad.getStreet());
 		System.out.println("City : "+ad.getCity());
 		System.out.println("State : "+ad.getState());
-		System.out.println("Pincode : "+ad.getPinode());
+		System.out.println("Pin code : "+ad.getPincode());
 		
-		System.out.println(listOfDocuments);
+		List<Documents> docs = ad.getListOfDocs();
+		System.out.println("List of Mandatory Document Details :");
+		for(int i = 0; i < docs.size(); i++) {
+			System.out.println(docs.get(i).getDocumentName()+" : "+docs.get(i).getDocumentID());
+		}
+		
 		
 	}
 }
